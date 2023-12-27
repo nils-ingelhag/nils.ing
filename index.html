@@ -1,1 +1,140 @@
-Hej! 👋
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nils Ingelhag</title>
+    <link href="https://fonts.googleapis.com/css2?family=Computer+Modern&display=swap" rel="stylesheet"> 
+    <style>
+        /* CSS to set the background color */
+        body {
+            background-color: #e6e6e6;
+            font-family: 'Computer Modern', serif;
+            font-size: 17px;
+            /* Set color for font */
+            color: #333333;
+        }
+
+        /* CSS for the center section */
+        .center-section {
+            width: 75ch;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        /* CSS for the h1 tag */
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* CSS for the p tag */
+        p {
+            font-size: 1.5em;
+            text-align: justify;
+        }
+
+        /* CSS for contents group div */
+        /*
+        It should look like this
+
+               Contents
+
+        content_group_name_1
+            content_item_1
+            content_item_2
+            content_item_3
+        content_group_name_2
+            content_item_1
+            content_item_2
+            content_item_3
+        content_group_name_3
+            content_item_1
+            content_item_2
+        */
+        .contents-group {
+            margin-top: 10px;
+        }
+
+        /* CSS for content group name */
+        .content-group-name {
+            margin-bottom: 3px;
+        }
+
+        /* CSS for content item. Make it so every new item comes on a new line */
+        .content-item {
+            margin-left: 20px;
+            margin-bottom: 2px;
+
+        }
+
+        /* CSS for content item name */
+        .content-item-name {
+            float: left;
+        }
+
+        /* CSS for content item date. It should be on the right of the item name */
+        .content-item-date {
+            /* Make it so the date is on top of the item name */
+            float: right;
+            z-index: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Center section with lorem ipsum text -->
+    <div class="center-section">
+
+        <h1>Contents</h1>
+
+        <!-- Content group about my projects -->
+        <div class="contents-group">
+            <div class="content-group-name">Projects</div>
+
+            <div class="content-item">
+                <div class="content-item-name">Minijobb.se . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div>
+                <div class="content-item-date">2020</div>
+            </div>
+
+            <br>
+
+            <div class="content-item">
+                <div class="content-item-name">Self balancing unicycle</div>
+                <div class="content-item-date">2019</div>
+            </div>
+
+            <br>
+
+            <div class="content-item">60 V inverter</div>
+            <div class="content-item">Racket registering device</div>
+            <div class="content-item">Guardpuck</div>
+            <div class="content-item">Hangprinter</div>
+            <div class="content-item">Delta robot</div>
+            <div class="content-item">Self sorting recycling bin</div>
+            <div class="content-item">800 V Inverter</div>
+            <div class="content-item">Pscanner</div>
+            <div class="content-item">DB1</div>
+            <div class="content-item">Tendon driven robot</div>
+            <div class="content-item">Diffusion policy</div>
+        </div>
+
+        <!-- Content group about my education -->
+        <div class="contents-group">
+            <div class="content-group-name">Education</div>
+            <div class="content-item">Engineering physics, BA</div>
+            <div class="content-item">Engineering mathematics and computational science, MS</div>
+        </div>
+
+        <!-- Content group about my thoughts -->
+        <div class="contents-group">
+            <div class="content-group-name">Thoughts</div>
+            <div class="content-item">Emergence</div>
+            <div class="content-item">Society</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
