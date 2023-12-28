@@ -61,23 +61,41 @@
             margin-bottom: 3px;
         }
 
-        /* CSS for content item. Make it so every new item comes on a new line */
+        /* CSS for content item. Align items in a row */
         .content-item {
+            display: flex;
+            align-items: center;
             margin-left: 20px;
             margin-bottom: 2px;
-
+            justify-content: space-between; /* This spreads out the child elements */
         }
 
-        /* CSS for content item name */
         .content-item-name {
-            float: left;
+            position: relative;
+            white-space: nowrap; /* Prevents wrapping of text */
+            overflow: hidden; /* Ensures overflow content is hidden */
+            padding-right: 10px; /* Space before the dotted line starts */
+        }
+        
+
+        .content-item-dots {
+            
+            overflow: hidden; /* Ensure overflow content is hidden */
+            white-space: nowrap; /* Keep the dots in one line */
+        }
+        
+        .content-item-dots:after {
+            content: '....................................................................................................'; /* A long string of dots */
+            display: block; /* Makes the pseudo-element behave like a block */
+            letter-spacing: 2px; /* Adjust spacing between dots */
         }
 
-        /* CSS for content item date. It should be on the right of the item name */
+
+        /* CSS for content item date */
         .content-item-date {
-            /* Make it so the date is on top of the item name */
-            float: right;
-            z-index: 1;
+            white-space: nowrap; /* Prevents wrapping of text */
+            flex-shrink: 0; /* Prevents the element from shrinking */
+            padding-left: 10px; /* Space after the dotted line ends */
         }
 
         /* CSS for site path. It should be on the top left */
@@ -89,96 +107,285 @@
             font-size: 1.1em;
         }
 
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%; /* adjust as needed */
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        
+        .wordLeft {
+            flex-shrink: 0;
+            padding-right: 10px;
+        }
+        
+        .wordRight {
+            flex-shrink: 0;
+            padding-left: 10px;
+        }
+        
+        .dots {
+            flex-grow: 1;
+            text-overflow: "";
+            overflow: hidden;
+            /*float: right;*/
+            text-align: right;
+            unicode-bidi:bidi-override;
+            direction:rtl;
+          
+        }
+        
+
     </style>
 </head>
 <body>
-    <div class="site-path">
-        Nils Ingelhag / Contents
-    </div>
 
     <!-- Center section with lorem ipsum text -->
     <div class="center-section">
 
-        <h1>Contents</h1>
+        <h1>Nils Ingelhag</h1>
 
-        <!-- Content group about my projects -->
         <div class="contents-group">
+
+            <div class="content-group-name">Companies</div>
+
+            <div class="container">
+                <span class="wordLeft">Nils Ingelhag, Consulting - Sole proprietorship</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017 - </span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Emergence AB (Inc.) - Founder & CEO</span>
+                <span class="dots"></span>
+                <span class="wordRight">2023 - </span>
+            </div>
+
+        </div>
+
+        <div class="contents-group">
+
             <div class="content-group-name">Projects</div>
 
-            <div class="content-item">
-                <div class="content-item-name">Minijobb.se . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div>
-                <div class="content-item-date">2020</div>
+            <div class="container">
+                <span class="wordLeft">Gig economy job platform</span>
+                <span class="dots"></span>
+                <span class="wordRight">2014</span>
             </div>
 
-            <br>
-
-            <div class="content-item">
-                <div class="content-item-name">Self balancing unicycle</div>
-                <div class="content-item-date">2019</div>
+            <div class="container">
+                <span class="wordLeft">Self balancing unicycle</span>
+                <span class="dots"></span>
+                <span class="wordRight">2015</span>
             </div>
 
-            <br>
+            <div class="container">
+                <span class="wordLeft">Three phase inverter, 60 V, 10 A</span>
+                <span class="dots"></span>
+                <span class="wordRight">2015</span>
+            </div>
 
-            <div class="content-item">60 V inverter</div>
-            <div class="content-item">Racket registering device</div>
-            <div class="content-item">Guardpuck</div>
-            <div class="content-item">Hangprinter</div>
-            <div class="content-item">Delta robot</div>
-            <div class="content-item">Pockels cell laser data transmition</div>
-            <div class="content-item">Self sorting recycling bin</div>
-            <div class="content-item">800 V Inverter</div>
-            <div class="content-item">Pscanner</div>
-            <div class="content-item">DB1</div>
-            <div class="content-item">Tendon driven robot</div>
-            <div class="content-item">Diffusion policy</div>
+            <div class="container">
+                <span class="wordLeft">LoRa construcion site theft alarm</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Racket sports hit classifier</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Line based 3d printer</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Delta robot</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Pockels cell laser data transmition</span>
+                <span class="dots"></span>
+                <span class="wordRight">2018</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Three phase inverter, SiC, 800 V, 120 A</span>
+                <span class="dots"></span>
+                <span class="wordRight">2020</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Vision based self sorting recycling bin</span>
+                <span class="dots"></span>
+                <span class="wordRight">2020</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Vision based traffic sign classifier</span>
+                <span class="dots"></span>
+                <span class="wordRight">2020</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Mini cloud platform for python users</span>
+                <span class="dots"></span>
+                <span class="wordRight">2021</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Tendon driven robot</span>
+                <span class="dots"></span>
+                <span class="wordRight">2022</span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Robotic behavorial cloning</span>
+                <span class="dots"></span>
+                <span class="wordRight">2023</span>
+            </div>
+
         </div>
 
         <!-- Content group about my education -->
         <div class="contents-group">
             <div class="content-group-name">Education</div>
-            <div class="content-item">Engineering physics - Chalmers</div>
-            <div class="content-item">Engineering mathematics and computational science - Chalmers, KTH, TUM</div>
-        </div>
-
-        <!-- Content group about my thoughts -->
-        <div class="contents-group">
-            <div class="content-group-name">Thoughts</div>
-            <div class="content-item">Emergence</div>
-            <div class="content-item">Society</div>
+            <div class="container">
+                <span class="wordLeft">Engineering physics, BSc - Chalmers</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017 - 2021</span>
+            </div>            
+            
+            <div class="container">
+                <span class="wordLeft">Engineering mathematics and comp. science, MSc - Chalmers, KTH, TUM</span>
+                <span class="dots"></span>
+                <span class="wordRight">2021 -</span>
+            </div>
         </div>
 
         <!-- Content group about my education -->
         <div class="contents-group">
             <div class="content-group-name">Awards</div>
-            <div class="content-item">Winner of Tele2 IoT Challenge - Tele2 AB</div>
-            <div class="content-item">Winner of Openhack Gothenburg - OpenHack</div>
-            <div class="content-item">Winner of Chalmers Cup in Self-Driving - Einride AB</div>
+
+            <div class="container">
+                <span class="wordLeft">Winner of Tele2 IoT Challenge, $5000 - Tele2 AB</span>
+                <span class="dots"></span>
+                <span class="wordRight">2017</span>
+            </div>  
+
+            <div class="container">
+                <span class="wordLeft">Winner of Openhack Gothenburg - OpenHack</span>
+                <span class="dots"></span>
+                <span class="wordRight">2020</span>
+            </div>  
+
+            <div class="container">
+                <span class="wordLeft">Winner of Chalmers Cup in Self-Driving - Einride AB</span>
+                <span class="dots"></span>
+                <span class="wordRight">2021</span>
+            </div> 
 
         </div>
         
         <!-- Content group about my education -->
         <div class="contents-group">
-            <div class="content-group-name">Profesional commitments</div>
-            <div class="content-item">Embedded engineer - Pluspole AB</div>
-            <div class="content-item">Embedded engineer - Plejd AB</div>
-            <div class="content-item">Machine learning engineer - Univrses AB</div>
-            <div class="content-item">Project engineer - Chalmers Formula Student</div>
-            <div class="content-item">Research Assistant - Center for Bionics and Pain Research</div>
-            <div class="content-item">Committee Member - Gothenburg Artificial Intelligence Alliance</div>
-            <div class="content-item">Research Engineer - Royal Institute of Technology</div>
+            <div class="content-group-name">Professional commitments</div>
+
+            <div class="container">
+                <span class="wordLeft">Embedded engineer - Pluspole AB</span>
+                <span class="dots"></span>
+                <span class="wordRight">2018</span>
+            </div> 
+            <div class="container">
+                <span class="wordLeft">Embedded engineer - Plejd AB</span>
+                <span class="dots"></span>
+                <span class="wordRight">2019</span>
+            </div> 
+            <div class="container">
+                <span class="wordLeft">Machine learning engineer - Univrses AB</span>
+                <span class="dots"></span>
+                <span class="wordRight">2020</span>
+            </div> 
+            <div class="container">
+                <span class="wordLeft">Project engineer - Chalmers Formula Student</span>
+                <span class="dots"></span>
+                <span class="wordRight">2020</span>
+            </div>
+            <div class="container">
+                <span class="wordLeft">Committee Member - Gothenburg Artificial Intelligence Alliance</span>
+                <span class="dots"></span>
+                <span class="wordRight">2021</span>
+            </div>
+            <div class="container">
+                <span class="wordLeft">Research Assistant - Center for Bionics and Pain Research</span>
+                <span class="dots"></span>
+                <span class="wordRight">2022</span>
+            </div> 
+            <div class="container">
+                <span class="wordLeft">Research Engineer - Royal Institute of Technology, KTH</span>
+                <span class="dots"></span>
+                <span class="wordRight">2023</span>
+            </div>
         </div>
+
 
         <!-- Content group about my education -->
         <div class="contents-group">
-            <div class="content-group-name">Contact</div>
-            <div class="content-item">Email</div>
-            <div class="content-item">X</div>
-            <div class="content-item">Linkedin</div>
 
+            <div class="content-group-name">Personal</div>
+            <div class="container">
+                <span class="wordLeft">Contact - Email, X, Linkedin</span>
+                <span class="dots"></span>
+                <span class="wordRight"></span>
+            </div>
+
+            <div class="container">
+                <span class="wordLeft">Alive</span>
+                <span class="dots"></span>
+                <span class="wordRight">1996 -</span>
+            </div>
 
         </div>
 
     </div>
+    <script>
 
+        window.onload = function() {
+            const containers = document.querySelectorAll('.container');
+        
+            function updateDots() {
+                containers.forEach(container => {
+                    const wordLeft = container.querySelector('.wordLeft');
+                    const wordRight = container.querySelector('.wordRight');
+                    const dots = container.querySelector('.dots');
+        
+                    const containerWidth = container.offsetWidth;
+                    const wordLeftWidth = wordLeft.offsetWidth;
+                    const wordRightWidth = wordRight.offsetWidth;
+                    const spaceForDots = containerWidth - wordLeftWidth - wordRightWidth;
+        
+                    const dotWidth = 8; // Approximate width of each dot, adjust as needed
+                    const numberOfDots = Math.floor(spaceForDots / dotWidth);
+        
+                    dots.textContent = '. '.repeat(numberOfDots);
+                });
+            }
+        
+            window.onresize = updateDots;
+            updateDots();
+        };
+        
+        
+    </script>
 </body>
 </html>
